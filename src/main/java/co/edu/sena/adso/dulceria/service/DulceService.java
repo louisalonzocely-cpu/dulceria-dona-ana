@@ -4,12 +4,14 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import co.edu.sena.adso.dulceria.model.Categoria;
 import co.edu.sena.adso.dulceria.model.Dulce;
 import co.edu.sena.adso.dulceria.repository.DulceRepository;
 
+@Service
 public class DulceService {
 
     private final DulceRepository dulceRepository;
