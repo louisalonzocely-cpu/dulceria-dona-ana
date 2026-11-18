@@ -48,4 +48,14 @@ public class DulceService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Dulce no encontrado" + id));
     }
 
+    public Dulce guardar(Dulce dulce) {
+        dulce.setNombre(dulce.getNombre().trim());
+        return dulceRepository.save(dulce);
+    }
+
+    public void eliminar(Long id) {
+        buscar(id);
+        dulceRepository.deleteById(id);
+    }
+
 }
