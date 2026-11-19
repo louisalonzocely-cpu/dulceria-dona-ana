@@ -37,7 +37,7 @@ public class AdminDulceController {
     public String nuevo(Model model) {
         model.addAttribute("dulce", new Dulce());          // Objeto que llenará el formulario
         model.addAttribute("categorias", Categoria.values());
-        return "admin/dulce-form";
+        return "admin/dulces-form";
     }
  
     // POST /admin/dulces/guardar -> recibe el formulario
@@ -50,7 +50,7 @@ public class AdminDulceController {
         if (resultado.hasErrors()) {
             // Hay errores: se vuelve a mostrar el formulario con lo escrito y los mensajes
             model.addAttribute("categorias", Categoria.values());
-            return "admin/dulce-form";
+            return "admin/dulces-form";
         }
  
         boolean esNuevo = dulce.getId() == null;
